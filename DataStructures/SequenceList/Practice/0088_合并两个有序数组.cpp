@@ -17,27 +17,6 @@ using namespace std;
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        // int i = 0, j = 0;
-        // int arr[200]; // 辅助数组
-        // int cur = 0;  // 指向辅助数组的当前位置
-
-        // // 1. 比较并放入辅助数组
-        // while (i < m && j < n) {
-        //     if (nums1[i] < nums2[j]) {
-        //         arr[cur++] = nums1[i++];
-        //     } else {
-        //         arr[cur++] = nums2[j++];
-        //     }
-        // }
-
-        // // 2. 判断哪个数组还有剩余
-        // while (i < m) arr[cur++] = nums1[i++];
-        // while (j < n) arr[cur++] = nums2[j++];
-
-        // // 3. 把辅助数组的值赋回 nums1
-        // for (int k = 0; k < m + n; k++) {
-        //     nums1[k] = arr[k];
-        // }
         int i=0,j=0;
         int arr[m+n+10];//辅助数组
         int cur = 0;
