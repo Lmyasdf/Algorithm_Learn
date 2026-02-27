@@ -1,0 +1,13 @@
+# 忽略所有的可执行文件 (Windows)
+*.exe
+
+# 忽略 VS Code 自动生成的配置文件夹
+.vscode/
+
+# 忽略编译过程中产生的中间文件
+*.o
+*.obj
+
+# 忽略 macOS 系统的缩略图文件
+.DS_Store
+DataStructures/爱番番.cpp
