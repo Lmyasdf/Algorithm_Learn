@@ -7,7 +7,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-int n;
+int n;//
 string path;
 void dfs(int pos){
     //ÍË³öµÝ¹é
