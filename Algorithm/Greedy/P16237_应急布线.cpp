@@ -1,5 +1,6 @@
 //https://www.luogu.com.cn/problem/P16237
 #include<iostream>
+#include<cmath>
 using namespace std;
 const int N = 1e5+10;
 int n,op;
@@ -36,7 +37,7 @@ int main(){
         }
     }
     int add = ret - 1;  // 需要添加的边数
-    int ans2 = (2 * add + n - 1) / n;  // ceil(2*add / n)
+    int ans2 = ceil(2.0*add / n);//注意括号内非整形
     cout << add << " " << ans2 << endl;
     return 0;
 }

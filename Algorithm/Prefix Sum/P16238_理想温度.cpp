@@ -19,6 +19,7 @@ int a[N],b[N],c[N],d[N];
 int zero_cnt;
 int pre[N];
 vector<int>v;
+//当想用二维数组存类<数,索引>关系时，由于数可能为负，所以可以考虑用哈希表
 unordered_map<int,vector<int>>m;//存差值对应的索引位置<差值，存索引的数组>
 int main(){
     int n;
