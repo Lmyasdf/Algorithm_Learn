@@ -27,7 +27,7 @@ void find(string &s){
         }
         cur = tree[cur][path];
     }
-    if(e[cur]==0){
+    if(e[cur]==0){//要注意判断该字符是终点还是路径
         cout<<"WRONG"<<endl;
         return;
     }
