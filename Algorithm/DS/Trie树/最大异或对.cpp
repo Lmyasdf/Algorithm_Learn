@@ -1,3 +1,7 @@
+//https://www.luogu.com.cn/problem/P10471
+//思路：找到每个数x对应的最优解y，得出每组x^y，最后统计最大值
+//      利用二进制01存Trie树解决
+//错误：倒序for总把i--习惯写成i++
 #include<iostream>
 using namespace std;
 const int N = 1e5+10;
@@ -7,7 +11,7 @@ int idx;
 void insert(int x){
     int cur = 0;
     for(int i=31;i>=0;i--){
-        int path = ((x>>i)&1);
+        int path = ((x>>i)&1);//位运算1：判断某位是不是1
         if(tree[cur][path]==0)tree[cur][path]=++idx;
         cur = tree[cur][path];
     }
@@ -25,7 +29,7 @@ int find(int x){
         //走得通
         else{
             cur = tree[cur][path^1];
-            ret = ret|(1<<i);
+            ret = ret|(1<<i);//位运算2：将某位变为1
         }
     }
     return ret;
