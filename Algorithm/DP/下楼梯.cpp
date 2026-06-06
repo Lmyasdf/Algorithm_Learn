@@ -1,4 +1,5 @@
 //https://www.luogu.com.cn/problem/P10250
+//注意这种设计加和的题目，变量要初始化为longlong类型
 #include<iostream>
 using namespace std;
 const int N = 65;
@@ -20,8 +21,21 @@ int main(){
     f[1] = 1;
     f[2] = 2;
     /* 简洁写法，省略递归方程：
+    //版本一：
     for(int i=3;i<=n;i++){
         f[i] = f[i-1] + f[i-2] + f[i-3];
-    }  */
+    }  
+        
+    //版本二：（滚动数组空间优化）
+    long long a = 1,b = 1,c = 2;
+    for(int i=3;i<=n;i++){
+        long long t = a+b+c;
+        a = b;
+        b = c;
+        c = t;
+    }
+    if(n==1)cout<<b<<endl;
+    else cout<<c<<endl;
+    */
     cout<<fun(n)<<endl;
 }
