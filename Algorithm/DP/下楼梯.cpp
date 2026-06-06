@@ -9,7 +9,7 @@ long long fun(int n){
     //2.推导状态转移方程，最多走3级，故f[n]就是前三级所需步数的累加
     //4.确定调表顺序，本题从前往后
     //5.确定最终结果
-    if(f[n-1]!=0)return f[n] = f[n-1] + f[n-2] + f[n-3];
+    if(f[n]!=0)return f[n];
     return f[n] = fun(n-1) + fun(n-2) + fun(n-3);
 }
 
@@ -20,5 +20,9 @@ int main(){
     f[0] = 1;
     f[1] = 1;
     f[2] = 2;
+    /* 简洁写法，省略递归方程：
+    for(int i=3;i<=n;i++){
+        f[i] = f[i-1] + f[i-2] + f[i-3];
+    }  */
     cout<<fun(n)<<endl;
 }
