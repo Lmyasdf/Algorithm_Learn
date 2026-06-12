@@ -1,4 +1,7 @@
 //https://www.luogu.com.cn/problem/P1541
+//错误: 1. ijkl遍历没从0开始而是1
+//      2. t的更新逻辑错误，误以为像其他题一样把前1~4步的f值累加到          
+//         该位置,本题是要寻找最优解，并不是找最大和
 #include<iostream>
 using namespace std;
 const int N = 45;
