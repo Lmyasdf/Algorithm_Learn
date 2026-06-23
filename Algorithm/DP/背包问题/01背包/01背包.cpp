@@ -11,7 +11,7 @@ int main(){
     for(int i=1;i<=n;i++)cin>>v[i]>>w[i];
     //问题一：求背包容量之内的最大价值
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=m;j++){
+        for(int j=0;j<=m;j++){
             //状态转移方程：存或者不存
             if(j-v[i]>=0)f[i][j] = max(f[i-1][j-v[i]] + w[i],f[i-1][j]);
             else f[i][j] = f[i-1][j];
@@ -28,7 +28,7 @@ int main(){
     f[0][0] = 0;
     
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=m;j++){
+        for(int j=0;j<=m;j++){
             if(j>=v[i])f[i][j] = max(f[i-1][j-v[i]] + w[i],f[i-1][j]);
             else f[i][j] = f[i-1][j];
         }
